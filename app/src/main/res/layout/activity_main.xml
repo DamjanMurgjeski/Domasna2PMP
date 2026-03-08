@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="#FFFFFF"
-                app:title="Twitter Searches"
+                app:title="MK-EN Dictionary"
                 app:titleTextColor="#1D1B20" />
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -34,11 +34,12 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Search query">
+                android:hint="Внеси збор (English / Македонски)">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etQuery"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -48,10 +49,12 @@
                 android:layout_marginTop="12dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutTag"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:visibility="gone"
                     android:hint="Tag name">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etTag"
@@ -61,11 +64,11 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSave"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="12dp"
-                    android:text="Save"
+                    android:text="Search / Пребарај"
+                    app:icon="@android:drawable/ic_menu_search"
                     app:cornerRadius="12dp" />
             </LinearLayout>
         </LinearLayout>
@@ -73,7 +76,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Recent Tags"
+            android:text="Резултати од пребарувањето"
             android:padding="16dp"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -95,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="24dp"
-        android:text="Clear All"
+        android:text="Избриши историја"
         app:icon="@android:drawable/ic_menu_delete"
         android:backgroundTint="#BA1A1A"
         android:textColor="#FFFFFF"
